@@ -10,5 +10,9 @@
 
 // function declarations for the menu below
 int getMenuOption();
+const int MENU_STATS = 1;
+const int MENU_HISTO = 2;
+const int MENU_INPUT = 3;
+const int MENU_EXIT = 4;
 
 #endif /* MENU_H_ */
