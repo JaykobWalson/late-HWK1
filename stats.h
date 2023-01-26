@@ -8,6 +8,6 @@
 // constants
 #define ALPHABET_SIZE 26
 
-// TODO: functions declarations go below
+void stats(char someWord[]);
 
 #endif /* STATS_H_ */
