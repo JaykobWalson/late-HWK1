@@ -18,19 +18,16 @@
  * @return int
  */
 int main(int argc, char *argv[]) {
+int histogram[ALPHABET_SIZE];//histogram for building later;
 
 
-
-    char input[MAX_INPUT_LEN];
-	printf("Enter something to start.");
-	int total = 0;
-	fgets(input,MAX_INPUT_LEN,stdin);
 	//Keep going until the user enters #
 	char word[MAX_INPUT_LEN];
-	while(input[0] != '#'){
+	//int total = 0;
+	while(word[0] != '#'){
 		printf("Enter strings (# to stop)");
 		fgets(word,MAX_INPUT_LEN,stdin);
-		total = total + 1;
+		//total = total + 1;
 		if(word[0] == '#'){
 			break;
 		}
@@ -38,11 +35,10 @@ int main(int argc, char *argv[]) {
 		
 			//# = stop and then prompt the numbered options.
 			
-			
+			int option = getMenuOption();
 			while (option != MENU_EXIT) {
-				int option = getMenuOption();
     	if (option == MENU_INPUT) {
-         while (strcmp(input,"#\n") != 0) {
+         while (strcmp(word,"#\n") != 0) {
 		printf("Enter strings (# to stop)");
 		fgets(word,MAX_INPUT_LEN,stdin);
 			if(word[0] == '#'){
@@ -59,7 +55,6 @@ int main(int argc, char *argv[]) {
 
 		if(option == MENU_HISTO){
 			
-		int histogram[ALPHABET_SIZE];
 			for(char c = 'a'; c <= 'z'; c++){
 				int counter = 0;
 				for(int i = 0; i < strlen(word); i++){
